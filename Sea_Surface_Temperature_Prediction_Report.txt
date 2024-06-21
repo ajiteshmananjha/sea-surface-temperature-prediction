@@ -1,0 +1,51 @@
+
+Project Report: Sea Surface Temperature Prediction
+
+Introduction
+The project aimed to predict sea surface temperatures using historical data. The process involved data analysis, feature selection, model training, and evaluation. The initial approach considered using Long Short-Term Memory (LSTM) due to the sequential nature of the data, but later shifted to a Random Forest Regressor, which provided better performance.
+
+Data Analysis
+The project began with a thorough analysis of the dataset. Key steps included:
+1. Dataset Examination: Understanding the structure of the dataset, including the number of columns and rows.
+2. Null Value Check: Identifying and handling missing values to ensure the model's accuracy.
+3. Data Sorting: Organizing the data by date to maintain the sequential nature.
+
+Feature Selection
+A correlation matrix was generated to assess the relationships between different features. This helped in identifying the most relevant features for model training.
+
+Data Splitting
+The dataset was divided into training and testing sets:
+- Training Set: 80% of the data
+- Testing Set: 20% of the data
+This split ensured that the model was tested on fresh data, providing a realistic measure of its accuracy.
+
+Data Scaling and Normalization
+Selected features were scaled and normalized to standardize the data, making the training process more efficient.
+
+Model Selection and Training
+
+Initial Model: LSTM
+Given the sequential nature of the data, an LSTM model was initially chosen. Key steps included:
+- Experimenting with batch sizes, epochs, and different optimizers.
+- Despite efforts, the model achieved an RMSE of around 2, which was not satisfactory for accurate sea surface temperature prediction.
+
+Revised Approach: Random Forest Regressor
+Recognizing the simplicity of the dataset and the uniformity in the correlation values of features (excluding air temperature), the focus shifted to a Random Forest Regressor from scikit-learn. Steps included:
+- Reapplying data modifications.
+- Training the Random Forest model.
+
+Model Evaluation
+The Random Forest Regressor delivered significantly better results:
+- RMSE: 0.31
+- R² Score: 0.98
+These metrics indicated a high level of accuracy and reliability in the model's predictions.
+
+Conclusion
+The project successfully predicted sea surface temperatures using a Random Forest Regressor. The transition from LSTM to Random Forest was driven by the need for a more appropriate model for the dataset's characteristics. The final model demonstrated excellent performance, with minimal error and high explanatory power.
+
+Future Work
+Further improvements could include:
+- Exploring additional features or external datasets to enhance prediction accuracy.
+- Implementing advanced techniques for handling any remaining data nuances.
+- Conducting cross-validation to ensure the model's robustness.
+This project showcases the importance of flexibility in model selection and the effectiveness of Random Forest Regressor for regression tasks involving historical data.
